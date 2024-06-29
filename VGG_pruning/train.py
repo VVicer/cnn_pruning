@@ -61,7 +61,7 @@ def train(epoch):
         output = model(data)
         loss = F.cross_entropy(output, target)
         loss.backward()
-        #是否启用l1范数，进行稀疏训练。
+        #启用l1范数，进行稀疏训练。
         if args.sr:
             updateBN()
         optimizer.step()
